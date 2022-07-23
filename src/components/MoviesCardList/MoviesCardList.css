@@ -1,7 +1,24 @@
+.movies_wrapper {
+  padding: 70px;
+}
 .movies_component {
   display: flex;
   flex-direction: row;
   width: 100%;
-  flex-flow: row wrap;
-  justify-content: space-around;
+  /* margin: 0 auto; */
+  /* flex-flow: row wrap; */
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  /* flex-flow: ; */
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  .movies_wrapper {
+    padding: 70px 30px 40px;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .movies_wrapper {
+    padding: 40px 10px 40px;
+  }
 }

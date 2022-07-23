@@ -3,6 +3,13 @@
   box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.08);
   border-radius: 6px;
   margin-bottom: 37px;
+  cursor: pointer;
+}
+
+.card_image > img {
+  width: 100%; /* or any custom size */
+  height: 100%;
+  object-fit: contain;
 }
 
 .card_info {
@@ -34,4 +41,17 @@
   align-items: center;
 
   color: #a0a0a0;
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  .card_wrapper {
+    width: 339px;
+    margin-bottom: 30px;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .card_wrapper {
+    width: 300px;
+    /* margin-bottom: 30px; */
+  }
 }

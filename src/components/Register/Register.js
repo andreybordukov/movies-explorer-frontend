@@ -29,8 +29,8 @@ function Register({ register }) {
     <div className="register">
       <div className="register__wrapper">
         <form
-          className="auth__form"
-          name="auth__form"
+          className="register__form"
+          name="register__form"
           noValidate
           // onSubmit={handleSubmit}
         >
@@ -82,7 +82,7 @@ function Register({ register }) {
           />
           <span className="auth__text-error" id="password-error"></span>
           <button
-            className="auth__button"
+            className="register__button"
             type="submit"
             aria-label="кнопка регистрации"
           >
@@ -94,7 +94,7 @@ function Register({ register }) {
               className="auth__button-registry"
               type="submit"
               aria-label="кнопка перехода"
-              href="/sign-in"
+              href="/signin"
             >
               Войти
             </a>

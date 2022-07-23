@@ -14,6 +14,7 @@
   padding: 21px 70px;
   background-color: #ffffff;
   justify-content: space-between;
+  vertical-align: middle;
 }
 
 .header_wrapper-none {
@@ -21,6 +22,8 @@
 }
 
 .button_block {
+  vertical-align: middle;
+  line-height: 43px;
 }
 
 .auth__button-reg,
@@ -56,9 +59,64 @@
   border-radius: 3px;
 }
 
+.nav__button,
+.nav__button:active,
+.nav__button:visited {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+
+  text-align: right;
+
+  color: #000000;
+  text-decoration: none;
+  padding-right: 20px;
+}
+
+.nav__button-active,
+.nav__button-active:active,
+.nav__button-active:visited {
+  font-weight: 500;
+}
+
+.nav__button-profile,
+.nav__button-profile:active,
+.nav__button-profile:visited {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+
+  align-items: center;
+  text-decoration: none;
+
+  color: #000000;
+  /* opacity: 0.2; */
+  border: 2px solid #aaaaaa;
+  border-radius: 50px;
+  width: 100px;
+  height: 32px;
+  padding: 8px 12px;
+  vertical-align: middle;
+}
+
+.navigate_button {
+  display: none;
+}
+
 @media (min-width: 768px) and (max-width: 1279px) {
   .header_wrapper {
     padding: 18px 30px;
+  }
+
+  .navigate {
+    display: none;
+  }
+  .navigate_button {
+    display: block;
   }
 }
 @media (min-width: 320px) and (max-width: 767px) {

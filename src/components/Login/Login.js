@@ -59,7 +59,7 @@ function Login() {
               className="auth__button-registry"
               type="submit"
               aria-label="кнопка перехода"
-              href="/sign-up"
+              href="/signup"
             >
               Регистрация
             </a>

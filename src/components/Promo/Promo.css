@@ -51,6 +51,12 @@
   width: 89px;
 }
 
+.promo_button > a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #ffffff;
+}
+
 @media (min-width: 768px) and (max-width: 1279px) {
   .promo_wrapper {
     flex-direction: column-reverse;
