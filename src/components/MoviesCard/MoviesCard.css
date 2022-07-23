@@ -1,0 +1,37 @@
+.card_wrapper {
+  background: #fdfdfd;
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.08);
+  border-radius: 6px;
+  margin-bottom: 37px;
+}
+
+.card_info {
+  padding: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.card_name {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+  /* identical to box height */
+
+  color: #000000;
+}
+
+.card_time {
+  padding: 1px 16px 16px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 13px;
+  display: flex;
+  align-items: center;
+
+  color: #a0a0a0;
+}

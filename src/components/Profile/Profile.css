@@ -1,0 +1,10 @@
+.profile_title {
+}
+
+.profile_input-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile_input {
+}

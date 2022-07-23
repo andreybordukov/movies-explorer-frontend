@@ -1,0 +1,104 @@
+.auth__wrapper {
+  background-color: #ffffff;
+
+  color: #000000;
+}
+
+.auth__form {
+  display: flex;
+  flex-direction: column;
+  max-width: 396px;
+
+  margin: 70px auto;
+}
+
+.auth__title {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+
+  color: #000000;
+  margin-bottom: 10px;
+}
+
+.auth__input-label {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+
+  color: #a0a0a0;
+}
+.auth__input {
+  margin: 0;
+  margin-bottom: 20px;
+  border: none;
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 400;
+  font-style: normal;
+  width: 100%;
+  min-height: 27px;
+  padding: 15px;
+}
+
+input[type="email"],
+textarea {
+  background-color: #fff;
+}
+
+.auth__button {
+  margin-top: 159px;
+  padding: 13px 0;
+  background-color: #2be080;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+}
+
+.auth__button-registry,
+.auth__button-registry:active,
+.auth__button-registry:visited {
+  font-weight: 400;
+  font-family: "Inter", Arial, sans-serif;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 22px;
+  text-decoration: none;
+  color: #2be080;
+  padding: 0;
+  margin: 0;
+  margin-left: 6px;
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  .portfolio_wrapper {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    padding: 50px 50px 90px;
+    color: #000000;
+  }
+
+  .portfolio_title {
+    font-size: 28px;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .portfolio_wrapper {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 14px 70px;
+    color: #000000;
+  }
+
+  .portfolio_title {
+    font-size: 18px;
+    line-height: 28px;
+  }
+}
