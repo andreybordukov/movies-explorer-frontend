@@ -106,6 +106,7 @@ function App() {
         onClose={closeMenu}
         useClosePopup={useClosePopup}
         useClosePopupByEscape={useClosePopupByEscape}
+        location={location}
       />
     </div>
   );

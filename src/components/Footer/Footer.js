@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "../../images/logo__header.svg";
 import "./Footer.css";
 
 function Footer({ location }) {
@@ -17,9 +16,15 @@ function Footer({ location }) {
             <div className="footer_info">
               <div className="footer_date">©2022 </div>
               <div className="footer_links">
-                <a className="footer_link">Яндекс.Практикум</a>
-                <a className="footer_link">Github</a>
-                <a className="footer_link">Facebook</a>
+                <a className="footer_link" href="https://practicum.yandex.ru">
+                  Яндекс.Практикум
+                </a>
+                <a className="footer_link" href="https://github.com">
+                  Github
+                </a>
+                <a className="footer_link" href="https://facebook.com">
+                  Facebook
+                </a>
               </div>
             </div>
           </div>
