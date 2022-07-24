@@ -35,7 +35,7 @@ function Register({ register }) {
           // onSubmit={handleSubmit}
         >
           <a href="/">
-            <img src={logo} />
+            <img src={logo} alt="logo" />
           </a>
           <h2 className="auth__title"> Добро пожаловать!</h2>
           <label className="auth__input-label"> Имя</label>

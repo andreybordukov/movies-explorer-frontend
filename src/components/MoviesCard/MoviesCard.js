@@ -9,7 +9,7 @@ function MoviesCard() {
   return (
     <div className="card_wrapper">
       <div className="card_image">
-        <img src={image} />
+        <img src={image} alt="logo" />
       </div>
       <div className="card_info">
         <div className="card_name">33 слова о дизайне</div>

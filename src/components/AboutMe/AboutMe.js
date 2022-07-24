@@ -20,17 +20,17 @@ function AboutMe() {
             заниматься фриланс-заказами и ушёл с постоянной работы.
           </div>
           <div className="aboutme_links">
-            <a className="aboutme_link" href="">
+            <a className="aboutme_link" href="https://facebook.com">
               Facebook
             </a>
-            <a className="aboutme_link" href="">
+            <a className="aboutme_link" href="https://github.com">
               Github
             </a>
           </div>
         </div>
 
         <div className="aboutme_foto">
-          <img about="foto" src={foto} />
+          <img about="foto" src={foto} alt="logo" />
         </div>
       </div>
     </div>

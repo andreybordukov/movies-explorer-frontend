@@ -14,7 +14,7 @@ function Login() {
           // onSubmit={handleSubmit}
         >
           <a href="/">
-            <img src={logo} />
+            <img src={logo} alt="logo" />
           </a>
           <h2 className="auth__title"> Рады видеть</h2>
           <label className="auth__input-label"> Email</label>

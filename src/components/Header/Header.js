@@ -3,12 +3,7 @@ import logo from "../../images/logo__header.svg";
 import "./Header.css";
 
 function Header({ loggedIn, location, onLogout, openMenu }) {
-  // const [isMain, setMAin] = useState(true);
   let style = "";
-
-  const openMenu1 = () => {
-    console.log(">>>");
-  };
 
   if (location.pathname === "/signup" || location.pathname === "/signin") {
     style = "header_wrapper-none";
@@ -29,7 +24,7 @@ function Header({ loggedIn, location, onLogout, openMenu }) {
         <>
           <div>
             <a href="/">
-              <img src={logo} />
+              <img src={logo} alt="logo" />
             </a>
           </div>
           <div className="button_block">

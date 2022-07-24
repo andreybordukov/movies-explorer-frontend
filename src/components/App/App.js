@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  Routes,
-  Route,
-  Navigate,
-  useLocation,
-  useNavigate,
-} from "react-router-dom";
-import logo from "../../images/logo.svg";
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import "./App.css";
 
 import Header from "../Header/Header";
