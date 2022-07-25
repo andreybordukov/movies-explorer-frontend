@@ -78,3 +78,22 @@ textarea {
   margin: 0;
   margin-left: 6px;
 }
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .register__wrapper {
+    padding: 0 18px 70px;
+    background-color: #ffffff;
+    margin: 0 auto;
+    /* text-align: center; */
+  }
+
+  .register__form > a {
+    margin: 0 auto;
+  }
+
+  .auth__title {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+  }
+}

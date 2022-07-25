@@ -75,7 +75,7 @@ textarea {
   margin-left: 6px;
 }
 
-@media (min-width: 768px) and (max-width: 1279px) {
+/* @media (min-width: 768px) and (max-width: 1279px) {
   .portfolio_wrapper {
     background-color: #ffffff;
     display: flex;
@@ -87,18 +87,21 @@ textarea {
   .portfolio_title {
     font-size: 28px;
   }
-}
-@media (min-width: 320px) and (max-width: 767px) {
-  .portfolio_wrapper {
-    background-color: #ffffff;
-    display: flex;
-    flex-direction: column;
-    padding: 0px 14px 70px;
-    color: #000000;
-  }
+} */
 
-  .portfolio_title {
-    font-size: 18px;
-    line-height: 28px;
+@media (min-width: 320px) and (max-width: 767px) {
+  .auth__wrapper {
+    padding: 0 18px 70px;
+    background-color: #ffffff;
+    margin: 0 auto;
+    /* text-align: center; */
+  }
+  .auth__title {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+  }
+  .auth__form > a {
+    margin: 0 auto;
   }
 }

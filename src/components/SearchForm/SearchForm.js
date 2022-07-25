@@ -24,10 +24,16 @@ function SearchForm() {
                 fill="#959595"
               />
             </svg>
-            <input className="search_input" placeholder="Фильм"></input>
+            <input
+              className="search_input"
+              placeholder="Фильм"
+              required
+            ></input>
           </div>
 
-          <button className="search_button">Найти</button>
+          <button className="search_button" type="submit">
+            Найти
+          </button>
         </form>
         <div className="search_checkbox">
           <Switch />

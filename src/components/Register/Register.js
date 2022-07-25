@@ -37,7 +37,7 @@ function Register({ register }) {
           <a href="/">
             <img src={logo} alt="logo" />
           </a>
-          <h2 className="auth__title"> Добро пожаловать!</h2>
+          <h2 className="auth__title"> Добро пожаловать!!</h2>
           <label className="auth__input-label"> Имя</label>
           <input
             type="text"

@@ -112,6 +112,7 @@
 @media (min-width: 320px) and (max-width: 767px) {
   .tech_wrapper {
     padding: 70px 18px;
+    background-color: #ffffff;
   }
 
   .tech_header {
