@@ -8,7 +8,7 @@
 }
 
 .footer_title {
-  font-family: "Inter";
+  font-family: "Inter", Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 13px;
@@ -32,7 +32,7 @@
 .footer_links {
   display: flex;
   flex-direction: row;
-  font-family: "Inter";
+  font-family: "Inter", Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 13px;

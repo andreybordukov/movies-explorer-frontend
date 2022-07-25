@@ -5,9 +5,9 @@ import Switch from "../../components/Swith/Switch";
 
 function SearchForm() {
   return (
-    <div className="search_wrapper">
+    <section className="search_wrapper">
       <div className="search_component">
-        <div className="search_input-block">
+        <form className="search_input-block">
           <div className="search_input-search">
             <svg
               width="13"
@@ -27,14 +27,14 @@ function SearchForm() {
             <input className="search_input" placeholder="Фильм"></input>
           </div>
 
-          <div className="search_button">Найти</div>
-        </div>
+          <button className="search_button">Найти</button>
+        </form>
         <div className="search_checkbox">
           <Switch />
           <label>Короткометражки</label>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

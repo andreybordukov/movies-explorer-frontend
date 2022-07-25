@@ -6,7 +6,7 @@ import foto from "../../images/foto.png";
 
 function AboutMe() {
   return (
-    <div className="aboutme_wrapper">
+    <section className="aboutme_wrapper">
       <div className="aboutme_header">Студент</div>
       <div className="aboutme_content">
         <div className="aboutme_info">
@@ -33,7 +33,7 @@ function AboutMe() {
           <img about="foto" src={foto} alt="logo" />
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

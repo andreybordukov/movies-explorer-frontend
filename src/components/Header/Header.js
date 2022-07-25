@@ -16,7 +16,7 @@ function Header({ loggedIn, location, onLogout, openMenu }) {
   }
 
   return (
-    <div className={style}>
+    <header className={style}>
       {location.pathname === "/" ||
       location.pathname === "/movies" ||
       location.pathname === "/saved-movies" ||
@@ -113,7 +113,7 @@ function Header({ loggedIn, location, onLogout, openMenu }) {
       ) : (
         <></>
       )}
-    </div>
+    </header>
   );
 }
 

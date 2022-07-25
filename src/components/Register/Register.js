@@ -26,7 +26,7 @@ function Register({ register }) {
   };
 
   return (
-    <div className="register">
+    <main className="register">
       <div className="register__wrapper">
         <form
           className="register__form"
@@ -101,7 +101,7 @@ function Register({ register }) {
           </p>
         </form>
       </div>
-    </div>
+    </main>
   );
 }
 

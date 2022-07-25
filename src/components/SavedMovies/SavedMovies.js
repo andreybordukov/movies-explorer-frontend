@@ -7,12 +7,12 @@ import MoviesCardList from "../MoviesCardList/MoviesCardList";
 
 function SavedMovies() {
   return (
-    <div className="page">
+    <main className="page">
       <div className="wrapper">
         <SearchForm />
         <MoviesCardList />
       </div>
-    </div>
+    </main>
   );
 }
 

@@ -5,7 +5,7 @@ import "./Login.css";
 
 function Login() {
   return (
-    <div className="auth">
+    <main className="auth">
       <div className="auth__wrapper">
         <form
           className="auth__form"
@@ -66,7 +66,7 @@ function Login() {
           </p>
         </form>
       </div>
-    </div>
+    </main>
   );
 }
 

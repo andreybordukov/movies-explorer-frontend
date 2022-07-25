@@ -4,10 +4,10 @@ import "./Portfolio.css";
 
 function Portfolio() {
   return (
-    <div className="portfolio_wrapper">
+    <section className="portfolio_wrapper">
       <div className="portfolio_header">Портфолио</div>
       <div className="portfolio_content">
-        <div className="portfolio_link">
+        <a className="portfolio_link" href="/">
           <h3 className="portfolio_title">Статичный сайт</h3>
           <svg
             width="18"
@@ -22,8 +22,9 @@ function Portfolio() {
               fill="black"
             />
           </svg>
-        </div>
-        <div className="portfolio_link">
+        </a>
+
+        <a className="portfolio_link" href="/">
           <h3 className="portfolio_title">Адаптивный сайт</h3>
           <svg
             width="18"
@@ -38,8 +39,8 @@ function Portfolio() {
               fill="black"
             />
           </svg>
-        </div>
-        <div className="portfolio_link">
+        </a>
+        <a className="portfolio_link" href="/">
           <h3 className="portfolio_title">Одностраничное приложение</h3>
           <svg
             width="18"
@@ -54,9 +55,9 @@ function Portfolio() {
               fill="black"
             />
           </svg>
-        </div>
+        </a>
       </div>
-    </div>
+    </section>
   );
 }
 

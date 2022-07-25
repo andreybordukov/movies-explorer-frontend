@@ -4,7 +4,7 @@ import "./Promo.css";
 
 function Promo() {
   return (
-    <div className="promo_wrapper">
+    <section className="promo_wrapper">
       <div className="promo_content">
         <div className="promo_title">
           Учебный проект студента факультета Веб-разработки.
@@ -18,7 +18,7 @@ function Promo() {
         </div>
       </div>
       <img className="promo_logo" alt="Аватар" src={logo__header} />
-    </div>
+    </section>
   );
 }
 

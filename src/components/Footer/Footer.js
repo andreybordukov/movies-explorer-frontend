@@ -3,7 +3,7 @@ import "./Footer.css";
 
 function Footer({ location }) {
   return (
-    <>
+    <footer>
       {location.pathname === "/" ||
       location.pathname === "/movies" ||
       location.pathname === "/saved-movies" ||
@@ -32,7 +32,7 @@ function Footer({ location }) {
       ) : (
         <></>
       )}
-    </>
+    </footer>
   );
 }
 

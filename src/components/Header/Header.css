@@ -29,7 +29,7 @@
 .auth__button-reg,
 .auth__button-reg:active,
 .auth__button-reg:visited {
-  font-family: "Inter";
+  font-family: "Inter", Arial, sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
@@ -44,7 +44,7 @@
 .auth__button-enter,
 .auth__button-enter:active,
 .auth__button-enter:visited {
-  font-family: "Inter";
+  font-family: "Inter", Arial, sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
@@ -62,7 +62,7 @@
 .nav__button,
 .nav__button:active,
 .nav__button:visited {
-  font-family: "Inter";
+  font-family: "Inter", Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -84,7 +84,7 @@
 .nav__button-profile,
 .nav__button-profile:active,
 .nav__button-profile:visited {
-  font-family: "Inter";
+  font-family: "Inter", Arial, sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;

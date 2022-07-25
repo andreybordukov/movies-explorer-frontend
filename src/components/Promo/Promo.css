@@ -8,7 +8,7 @@
 }
 
 .promo_title {
-  font-family: "Inter";
+  font-family: "Inter", Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 50px;
@@ -21,7 +21,7 @@
 }
 
 .promo_info {
-  font-family: "Inter";
+  font-family: "Inter", Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 13px;
@@ -35,7 +35,7 @@
 }
 
 .promo_button {
-  font-family: "Inter";
+  font-family: "Inter", Arial, sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
@@ -73,7 +73,7 @@
   }
 
   .promo_title {
-    font-family: "Inter";
+    font-family: "Inter", Arial, sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 40px;
@@ -115,7 +115,7 @@
   }
 
   .promo_title {
-    font-family: "Inter";
+    font-family: "Inter", Arial, sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 30px;
@@ -133,7 +133,7 @@
     max-width: 260px;
     margin-bottom: 80px;
 
-    font-family: "Inter";
+    font-family: "Inter", Arial, sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 13px;
