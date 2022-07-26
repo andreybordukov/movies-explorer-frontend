@@ -1,0 +1,152 @@
+.promo_wrapper {
+  background-color: #5c5c5c;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  padding: 75px 70px;
+  justify-content: space-between;
+}
+
+.promo_title {
+  font-family: "Inter", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 58px;
+
+  color: #ffffff;
+
+  max-width: 640px;
+  margin: 0 auto 36px;
+}
+
+.promo_info {
+  font-family: "Inter", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+  color: #ffffff;
+  max-width: 310px;
+
+  mix-blend-mode: normal;
+  opacity: 0.5;
+  margin-bottom: 146px;
+}
+
+.promo_button {
+  font-family: "Inter", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 3px;
+
+  padding: 10px 20px;
+  width: 89px;
+}
+
+.promo_button > a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  .promo_wrapper {
+    flex-direction: column-reverse;
+    padding-top: 140px;
+  }
+
+  .promo_logo {
+    max-width: 310px;
+    margin: 0 auto;
+  }
+
+  .promo_content {
+    margin-top: 48px;
+  }
+
+  .promo_title {
+    font-family: "Inter", Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 50px;
+    text-align: center;
+
+    color: #ffffff;
+
+    max-width: 680px;
+    margin: 0 auto 22px;
+    /* margin-bottom: 22px; */
+  }
+
+  .promo_info {
+    margin: 0 auto;
+    text-align: center;
+    max-width: 260px;
+    margin-bottom: 92px;
+  }
+
+  .promo_button {
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .promo_wrapper {
+    flex-direction: column-reverse;
+    padding: 70px 10px 30px;
+  }
+
+  .promo_logo {
+    max-width: 210px;
+    margin: 0 auto;
+  }
+
+  .promo_content {
+    margin-top: 48px;
+  }
+
+  .promo_title {
+    font-family: "Inter", Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 38px;
+    text-align: center;
+
+    letter-spacing: -0.04em;
+
+    margin-bottom: 24px;
+  }
+
+  .promo_info {
+    margin: 0 auto;
+    text-align: center;
+    max-width: 260px;
+    margin-bottom: 80px;
+
+    font-family: "Inter", Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: center;
+
+    color: #ffffff;
+
+    mix-blend-mode: normal;
+    opacity: 0.5;
+  }
+
+  .promo_button {
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,141 @@
+.popup {
+  position: fixed;
+  font-family: "Inter", Arial, sans-serif;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.4s linear;
+  visibility: hidden;
+}
+
+.popup_type_image {
+  position: fixed;
+  font-family: "Inter", Arial, sans-serif;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.3);
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.6s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.popup_opened {
+  visibility: visible;
+  opacity: 1;
+  /* flex-direction: column; */
+}
+.popup__container {
+  display: flex;
+  flex-direction: column;
+  width: 520px;
+  right: 0;
+  background-color: #fff;
+  color: #000;
+  height: 100%;
+  margin-right: 0;
+  margin-left: auto;
+}
+.popup__exit {
+  color: white;
+  background-color: transparent;
+  background-image: url(../../images/__close.svg);
+  cursor: pointer;
+  position: relative;
+  bottom: 8px;
+  border: none;
+  text-decoration: none;
+  background-size: contain;
+  min-height: 30px;
+  width: 30px;
+  left: 460px;
+  top: 30px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  padding: 112px 90px;
+}
+
+.navigate__active {
+  font-family: "Inter", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  /* identical to box height */
+
+  text-align: center;
+  padding-bottom: 28px;
+
+  color: #000000;
+  cursor: pointer;
+  text-decoration: underline #000 2px;
+}
+.navigate__button {
+  font-family: "Inter", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  /* identical to box height */
+
+  text-align: center;
+  padding-bottom: 28px;
+  text-decoration: none;
+  color: #000000;
+  cursor: pointer;
+}
+
+.navigate__account {
+  text-align: center;
+  font-family: "Inter", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+
+  align-items: center;
+  text-decoration: none;
+
+  color: #000000;
+  /* opacity: 0.2; */
+  border: 2px solid #aaaaaa;
+  border-radius: 50px;
+  width: 100px;
+  /* height: 32px; */
+  padding: 8px 12px;
+  vertical-align: middle;
+
+  margin: auto auto 98px;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .popup__exit {
+    bottom: 8px;
+    border: none;
+    text-decoration: none;
+    background-size: contain;
+    min-height: 30px;
+    width: 30px;
+    left: 260px;
+    top: 30px;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    padding: 112px 10px;
+  }
+}

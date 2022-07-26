@@ -1,0 +1,80 @@
+.notfound__wrapper {
+  background-color: #ffffff;
+
+  color: #000000;
+}
+
+.notfound__wrapper > h2 {
+  font-family: "Inter", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 140px;
+  line-height: 169px;
+  text-align: center;
+
+  color: #000000;
+  margin: 0;
+  margin: 246px auto 5px;
+}
+.notfound__wrapper > p {
+  font-family: "Inter", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  margin: 0;
+  padding: 0 auto;
+}
+
+.notfound__button,
+.notfound__button:active,
+.notfound__button:visited {
+  text-align: center;
+  padding-top: 184px;
+}
+.notfound__button > a {
+  text-decoration: none;
+  font-weight: 400;
+  font-family: "Inter", Arial, sans-serif;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 22px;
+  color: #2be080;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  .notfound__wrapper > h2 {
+    font-family: "Inter", Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 140px;
+    line-height: 169px;
+    text-align: center;
+
+    color: #000000;
+    margin: 0;
+    margin: 408px auto 5px;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .notfound__wrapper > h2 {
+    font-family: "Inter", Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 140px;
+    line-height: 169px;
+    text-align: center;
+
+    color: #000000;
+    /* margin: 0; */
+    margin: 329px auto 10px;
+  }
+
+  .notfound__button,
+  .notfound__button:active,
+  .notfound__button:visited {
+    padding-top: 284px;
+  }
+}
