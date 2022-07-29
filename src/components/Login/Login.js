@@ -3,7 +3,32 @@ import logo from "../../images/logo__header.svg";
 
 import "./Login.css";
 
-function Login() {
+function Login({ login }) {
+  const [email, setEmail] = React.useState("");
+  const handleInputEmail = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const [password, setPassword] = React.useState("");
+  const handleInputPassword = (e) => {
+    setPassword(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!email || !password) {
+      return;
+    }
+    login({
+      password,
+      email,
+    });
+
+    setEmail("");
+    setPassword("");
+  };
+
   return (
     <main className="auth">
       <div className="auth__wrapper">
@@ -11,7 +36,7 @@ function Login() {
           className="auth__form"
           name="auth__form"
           noValidate
-          // onSubmit={handleSubmit}
+          onSubmit={handleSubmit}
         >
           <a href="/">
             <img src={logo} alt="logo" />
@@ -27,8 +52,8 @@ function Login() {
             maxLength="40"
             autoComplete="off"
             id="name"
-            // value={email || ""}
-            // onChange={handleInputEmail}
+            value={email || ""}
+            onChange={handleInputEmail}
           />
           <span className="auth__text-error" id="email-error"></span>
           <label className="auth__input-label"> Пароль</label>
@@ -42,8 +67,8 @@ function Login() {
             maxLength="40"
             autoComplete="off"
             id="password"
-            // value={password || ""}
-            // onChange={handleInputPassword}
+            value={password || ""}
+            onChange={handleInputPassword}
           />
           <span className="auth__text-error" id="password-error"></span>
           <button

@@ -1,16 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import "./Movies.css";
 
 import SearchForm from "../SearchForm/SearchForm";
 import MoviesCardList from "../MoviesCardList/MoviesCardList";
 
-function Movies() {
+function Movies({ cardList }) {
   return (
     <main className="page">
       <div className="wrapper">
         <SearchForm />
-        <MoviesCardList />
+        <MoviesCardList cardList={cardList} />
       </div>
     </main>
   );

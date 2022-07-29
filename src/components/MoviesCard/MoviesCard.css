@@ -4,12 +4,16 @@
   border-radius: 6px;
   margin-bottom: 37px;
   cursor: pointer;
+  width: 364px;
+  height: 281px;
 }
 
 .card_image > img {
   width: 100%; /* or any custom size */
   height: 100%;
-  object-fit: contain;
+  min-height: 203px;
+  object-fit: cover;
+  max-height: 203px;
 }
 
 .card_info {

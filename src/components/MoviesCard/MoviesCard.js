@@ -1,18 +1,37 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./MoviesCard.css";
 
-import image from "../../images/img2.png";
+// import image from "../../images/img2.png";
 
-function MoviesCard() {
+function MoviesCard({ card }) {
   const [isLike, SetLike] = React.useState(false);
+
+  const {
+    country,
+    id,
+    image,
+    nameEN,
+    nameRU,
+    trailerLink,
+    updated_at,
+    year,
+    duration,
+  } = card;
+
+  
+  const getTimeFromMins = (mins) => {
+    const hours = Math.trunc(mins / 60);
+    let minutes = mins % 60;
+    return `${hours ? hours + "ч" : ""} ${minutes}м`;
+  };
 
   return (
     <div className="card_wrapper">
       <div className="card_image">
-        <img src={image} alt="logo" />
+        <img src={`https://api.nomoreparties.co${image.url}`} alt="logo" />
       </div>
       <div className="card_info">
-        <div className="card_name">33 слова о дизайне</div>
+        <div className="card_name">{nameRU}</div>
 
         <button>
           <svg
@@ -31,7 +50,7 @@ function MoviesCard() {
           </svg>
         </button>
       </div>
-      <div className="card_time">1ч 47м</div>
+      <div className="card_time">{getTimeFromMins(duration)} </div>
     </div>
   );
 }

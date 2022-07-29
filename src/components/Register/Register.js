@@ -14,14 +14,22 @@ function Register({ register }) {
     setPassword(e.target.value);
   };
 
+  const [name, setName] = React.useState("");
+  const handleInputName = (e) => {
+    setName(e.target.value);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    
     register({
       password,
       email,
+      name,
     });
     setEmail("");
+    setName("");
     setPassword("");
   };
 
@@ -32,7 +40,7 @@ function Register({ register }) {
           className="register__form"
           name="register__form"
           noValidate
-          // onSubmit={handleSubmit}
+          onSubmit={handleSubmit}
         >
           <a href="/">
             <img src={logo} alt="logo" />
@@ -49,7 +57,7 @@ function Register({ register }) {
             autoComplete="off"
             id="name"
             // value={email || ""}
-            // onChange={handleInputEmail}
+            onChange={handleInputName}
           />
           <span className="auth__text-error" id="email-error"></span>
           <label className="auth__input-label"> Email</label>
@@ -63,7 +71,7 @@ function Register({ register }) {
             autoComplete="off"
             id="email"
             // value={email || ""}
-            // onChange={handleInputEmail}
+            onChange={handleInputEmail}
           />
           <span className="auth__text-error" id="email-error"></span>
           <label className="auth__input-label"> Пароль</label>
@@ -78,7 +86,7 @@ function Register({ register }) {
             autoComplete="off"
             id="password"
             // value={password || ""}
-            // onChange={handleInputPassword}
+            onChange={handleInputPassword}
           />
           <span className="auth__text-error" id="password-error"></span>
           <button
