@@ -114,23 +114,10 @@ class Api {
   }
 }
 
-const api = new Api({
-  url: "https://api.andrey.students.nomoredomains.work",
-  headers: {
-    // authorization: "328ef2cf-f132-4d2f-959f-88c97b356965",
-    authorization: `Bearer ${localStorage.getItem("jwt")}`,
-    "Content-Type": "application/json",
-    Accept: "application/json",
-    Origin: "*",
-  },
-});
-
-export default api;
-
 export const getAllCards = async () => {
   const url = "https://api.nomoreparties.co/beatfilm-movies";
   const response = await fetch(url);
 
-  const data = await response.json(); // читаем ответ в формате JSON
+  const data = await response.json();
   return data;
 };

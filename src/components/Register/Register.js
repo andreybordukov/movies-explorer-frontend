@@ -1,37 +1,25 @@
 import React from "react";
 import logo from "../../images/logo__header.svg";
 
+import { useFormWithValidation } from "../../hooks/useForm";
+
 import "./Register.css";
 
-function Register({ register }) {
-  const [email, setEmail] = React.useState("");
-  const handleInputEmail = (e) => {
-    setEmail(e.target.value);
-  };
+function Register({ register, isSending, reqStatus: { message } }) {
+  const { values, handleChange, resetFrom, errors, isValid } =
+    useFormWithValidation();
 
-  const [password, setPassword] = React.useState("");
-  const handleInputPassword = (e) => {
-    setPassword(e.target.value);
-  };
-
-  const [name, setName] = React.useState("");
-  const handleInputName = (e) => {
-    setName(e.target.value);
-  };
+  const isDisabled = !isValid || !isSending;
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    
-    register({
-      password,
-      email,
-      name,
-    });
-    setEmail("");
-    setName("");
-    setPassword("");
+    register(values);
   };
+
+  React.useEffect(() => {
+    resetFrom({}, {}, false);
+  }, [resetFrom]);
 
   return (
     <main className="register">
@@ -45,7 +33,7 @@ function Register({ register }) {
           <a href="/">
             <img src={logo} alt="logo" />
           </a>
-          <h2 className="auth__title"> Добро пожаловать!!</h2>
+          <h2 className="auth__title"> Добро пожаловать</h2>
           <label className="auth__input-label"> Имя</label>
           <input
             type="text"
@@ -56,10 +44,13 @@ function Register({ register }) {
             maxLength="40"
             autoComplete="off"
             id="name"
-            // value={email || ""}
-            onChange={handleInputName}
+            value={values.name || ""}
+            onChange={handleChange}
           />
-          <span className="auth__text-error" id="email-error"></span>
+          <span className="auth__text-error" id="email-error">
+            {errors.name || ""}
+          </span>
+
           <label className="auth__input-label"> Email</label>
           <input
             type="email"
@@ -70,27 +61,37 @@ function Register({ register }) {
             maxLength="40"
             autoComplete="off"
             id="email"
-            // value={email || ""}
-            onChange={handleInputEmail}
+            value={values.email || ""}
+            onChange={handleChange}
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
           />
-          <span className="auth__text-error" id="email-error"></span>
-          <label className="auth__input-label"> Пароль</label>
+          <span className="auth__text-error" id="email-error">
+            {errors.email || ""}
+          </span>
 
+          <label className="auth__input-label"> Пароль</label>
           <input
             type="password"
             className="auth__input "
             name="password"
             required
-            minLength="2"
+            minLength="4"
             maxLength="40"
             autoComplete="off"
             id="password"
-            // value={password || ""}
-            onChange={handleInputPassword}
+            value={values.password || ""}
+            onChange={handleChange}
           />
-          <span className="auth__text-error" id="password-error"></span>
+          <span className="auth__text-error" id="password-error">
+            {errors.password || ""}
+          </span>
+
+          <span className="auth__input_feedback">{message}</span>
+
           <button
-            className="register__button"
+            className={
+              isDisabled ? "register__button-disabled" : "register__button"
+            }
             type="submit"
             aria-label="кнопка регистрации"
           >

@@ -79,6 +79,16 @@ textarea {
   margin-left: 6px;
 }
 
+.register__button-disabled {
+  margin-top: 15px;
+
+  padding: 13px 0;
+  background-color: #adb8b2;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+}
+
 @media (min-width: 320px) and (max-width: 767px) {
   .register__wrapper {
     padding: 0 18px 70px;

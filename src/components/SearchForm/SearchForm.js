@@ -1,15 +1,39 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./SearchForm.css";
-
-// import { getCards } from "../../utils/MoviesApi";
 
 import Switch from "../../components/Swith/Switch";
 
-function SearchForm() {
+function SearchForm({ onSearchMovies }) {
+  const [query, setQuery] = useState("");
+  const [checkboxStatus, setCheckboxStatus] = useState(false);
+
+  const handleQueryChange = (e) => {
+    const input = document.getElementById("queryInput");
+    input.setCustomValidity("");
+    setQuery(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSearchMovies(query, checkboxStatus);
+  };
+
+  const handleCheckboxChange = (e) => {
+    setCheckboxStatus(e.target.checked);
+    onSearchMovies(query, checkboxStatus);
+  };
+
+  useEffect(() => {
+    if (!query) {
+      const input = document.getElementById("queryInput");
+      input.setCustomValidity("Нужно ввести ключевое слово");
+    }
+  }, [query]);
+
   return (
     <section className="search_wrapper">
       <div className="search_component">
-        <form className="search_input-block">
+        <form className="search_input-block" onSubmit={handleSubmit}>
           <div className="search_input-search">
             <svg
               width="13"
@@ -27,9 +51,12 @@ function SearchForm() {
               />
             </svg>
             <input
+              id="queryInput"
               className="search_input"
               placeholder="Фильм"
               required
+              value={query || ""}
+              onChange={handleQueryChange}
             ></input>
           </div>
 
@@ -38,7 +65,7 @@ function SearchForm() {
           </button>
         </form>
         <div className="search_checkbox">
-          <Switch />
+          <Switch handleCheckboxChange={handleCheckboxChange} />
           <label>Короткометражки</label>
         </div>
       </div>

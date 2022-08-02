@@ -2,15 +2,31 @@ import React from "react";
 import "./MoviesCardList.css";
 import MoviesCard from "../MoviesCard/MoviesCard";
 
-function MoviesCardList({ cardList }) {
+function MoviesCardList({
+  movies,
+  handleMovieDelete,
+  visibleMoviesCount,
+  handleMovieSave,
+  savedMoviesUser,
+  cardsList,
+}) {
+  console.log(">>>", movies);
   return (
     <section className="movies_wrapper">
       <div className="movies_component">
-        {cardList &&
-          cardList.map((item, i) => {
-            return <MoviesCard card={item} key={i} />;
+        {movies &&
+          movies.slice(0, visibleMoviesCount).map((item, i) => {
+            return (
+              <MoviesCard
+                key={item.id || item.movieId}
+                handleMovieSave={handleMovieSave}
+                handleMovieDelete={handleMovieDelete}
+                savedMoviesUser={savedMoviesUser}
+                cardsList={cardsList}
+                movie={item}
+              />
+            );
           })}
-        {/* <MoviesCard card={cardList.cardList[0]} />; */}
       </div>
     </section>
   );
