@@ -8,7 +8,7 @@ import ShowMore from "../ShowMore/ShowMore";
 import { getAllCards } from "../../utils/MoviesApi";
 
 function Movies({
-  movies,
+  allMoviesFromApi,
   handleLoader,
   visibleMoviesCount,
   handleMovieSave,
@@ -34,60 +34,26 @@ function Movies({
 
   // const [isMoreButtonVisible, setIsMoreButtonVisible] = useState(false);
 
-  function moviesFilter(movies, query, checkboxStatus) {
-    let moviesFilter = movies;
+  const moviesFilter = (movies, query, checkboxStatus) => {
+    let filteredArray = movies;
     let result;
 
     if (checkboxStatus) {
-      moviesFilter = moviesFilter.filter((movie) => movie.duration <= 40);
+      filteredArray = filteredArray.filter((movie) => movie.duration <= 40);
     }
 
-    result = moviesFilter.filter((movie) => {
+    result = filteredArray.filter((movie) => {
       return movie.nameRU.toLowerCase().indexOf(query.toLowerCase()) !== -1;
     });
     return result;
-  }
-
-  // useEffect(() => {
-  //   if (localStorage.getItem("searchResults")) {
-  //     const init = JSON.parse(localStorage.getItem("searchResults"));
-  //     const searchResult = moviesFilter(init, query, checkboxStatus);
-  //     setFilteredMovies(searchResult);
-  //     setIsSearchDone(true);
-  //   }
-  // }, []);
+  };
 
   const handleSearch = (query, checkboxStatus) => {
     setMoviesToRender([]);
     setQuery(query);
     setCheckboxStatus(checkboxStatus);
 
-    let initialMoviesInLocalStorage = JSON.parse(
-      localStorage.getItem("initialMovies")
-    );
-
-    if (!initialMoviesInLocalStorage) {
-      setSearchMovies(true);
-      getAllCards()
-        .then((data) => {
-          localStorage.setItem("initialMovies", JSON.stringify(data));
-          initialMoviesInLocalStorage = data;
-        })
-        .catch(() => {
-          // setSearchStatus(
-          //   "Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз."
-          // );
-        })
-        .finally(() => {
-          setSearchMovies(false);
-        });
-    }
-
-    const searchResults = moviesFilter(
-      initialMoviesInLocalStorage,
-      query,
-      checkboxStatus
-    );
+    const searchResults = moviesFilter(allMoviesFromApi, query, checkboxStatus);
     setFilteredMovies(searchResults);
   };
 
@@ -120,17 +86,17 @@ function Movies({
       <div className="wrapper">
         <SearchForm onSearchMovies={handleSearch} />
         <MoviesCardList
-          movies={filteredMovies}
+          filteredMovies={filteredMovies}
           visibleMoviesCount={visibleMoviesCount}
           handleMovieSave={handleMovieSave}
           handleMovieDelete={handleMovieDelete}
           savedMoviesUser={savedMoviesUser}
           cardsList={cardsList}
         />
-        <ShowMore
-          // isMoreButtonVisible={isMoreButtonVisible}
-          handleLoader={handleLoader}
-        />
+        {filteredMovies.length &&
+          visibleMoviesCount < filteredMovies.length && (
+            <ShowMore handleLoader={handleLoader} />
+          )}
       </div>
     </main>
   );

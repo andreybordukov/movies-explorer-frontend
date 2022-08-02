@@ -37,7 +37,7 @@ function App() {
   const [currentUser, setCurrentUser] = useState({});
   const [savedMoviesUser, setSavedMoviesUser] = useState([]);
 
-  const [movies, setMovies] = useState([]);
+  const [allMoviesFromApi, setAllMoviesFromApi] = useState([]);
 
   const [isLoginSending, setLoginSending] = React.useState(true);
   const [isLoginStatus, setLoginStatus] = React.useState({});
@@ -68,7 +68,7 @@ function App() {
 
     if (localMovies) {
       try {
-        setMovies(JSON.parse(localMovies));
+        setAllMoviesFromApi(JSON.parse(localMovies));
       } catch (error) {
         localMovies.removeItem("movies");
         fetchMovies();
@@ -81,7 +81,7 @@ function App() {
   const fetchMovies = () => {
     getAllCards()
       .then((res) => {
-        setMovies(res);
+        setAllMoviesFromApi(res);
         localStorage.setItem("movies", JSON.stringify(res));
       })
       .catch((err) => {
@@ -325,7 +325,7 @@ function App() {
               element={
                 <ProtectedRoute loggedIn={loggedIn}>
                   <Movies
-                    movies={movies}
+                    allMoviesFromApi={allMoviesFromApi}
                     handleLoader={handleLoader}
                     visibleMoviesCount={visibleMoviesCount}
                     currentUser={currentUser}

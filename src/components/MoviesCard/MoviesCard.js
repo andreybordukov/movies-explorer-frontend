@@ -9,11 +9,11 @@ function MoviesCard({ movie, cardsList, handleMovieSave, handleMovieDelete }) {
     nameEN,
     nameRU,
     trailerLink,
-    updated_at,
     year,
     duration,
+    director,
+    descriptionn,
   } = movie;
-  console.log(">>", movie, cardsList);
   const isSaved = movie.id && cardsList.some((m) => m.movieId === movie.id);
 
   const handleMoviesSaved = () => {
@@ -21,17 +21,17 @@ function MoviesCard({ movie, cardsList, handleMovieSave, handleMovieDelete }) {
       handleMovieDelete(cardsList.filter((m) => m.movieId === movie.id)[0]);
     } else if (!isSaved) {
       handleMovieSave({
-        country: movie.country,
-        director: movie.director,
-        duration: movie.duration,
-        year: movie.year,
-        description: movie.description,
+        country,
+        director,
+        duration,
+        year,
+        descriptionn,
         image: `https://api.nomoreparties.co${movie.image.url}`,
-        trailerLink: movie.trailerLink,
+        trailerLink,
         thumbnail: `https://api.nomoreparties.co${movie.image.formats.thumbnail.url}`,
-        movieId: movie.id,
-        nameRU: movie.nameRU,
-        nameEN: movie.nameEN,
+        movieId: id,
+        nameRU,
+        nameEN,
       });
     }
   };
