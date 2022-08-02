@@ -12,7 +12,7 @@ function MoviesCard({ movie, cardsList, handleMovieSave, handleMovieDelete }) {
     year,
     duration,
     director,
-    descriptionn,
+    description,
   } = movie;
   const isSaved = movie.id && cardsList.some((m) => m.movieId === movie.id);
 
@@ -25,7 +25,7 @@ function MoviesCard({ movie, cardsList, handleMovieSave, handleMovieDelete }) {
         director,
         duration,
         year,
-        descriptionn,
+        description,
         image: `https://api.nomoreparties.co${movie.image.url}`,
         trailerLink,
         thumbnail: `https://api.nomoreparties.co${movie.image.formats.thumbnail.url}`,

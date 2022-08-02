@@ -122,6 +122,22 @@ export const deleteMovies = (movie) => {
   });
 };
 
+export const getMovies = () => {
+  const Authorization = `Bearer ${localStorage.getItem("jwt")}`;
+
+  return fetch(`${AUTH_URL}/movies`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+      Authorization,
+      Origin: "*",
+    },
+  }).then(async (response) => {
+    return await checkResponse(response);
+  });
+};
+
 const checkResponse = async (res) => {
   if (res.ok) {
     return await res.json();

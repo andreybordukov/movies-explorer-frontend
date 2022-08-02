@@ -10,7 +10,8 @@ function MoviesCardList({
   savedMoviesUser,
   cardsList,
 }) {
-  console.log("visibleMoviesCount", visibleMoviesCount, filteredMovies.length);
+  console.log("movie", filteredMovies);
+
   return (
     <section className="movies_wrapper">
       <div className="movies_component">

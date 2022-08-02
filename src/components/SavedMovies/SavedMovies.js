@@ -6,11 +6,12 @@ import SearchForm from "../SearchForm/SearchForm";
 import MoviesCardList from "../MoviesCardList/MoviesCardList";
 
 function SavedMovies({ cardsList, handleMovieDelete }) {
-  const [filteredMovies, setFilteredMovies] = React.useState([]);
+  const [filteredMovies, setFilteredMovies] = React.useState(cardsList);
   const [isSearchDone, setIsSearchDone] = React.useState(false);
 
   const [query, setQuery] = React.useState("");
   const [checkboxStatus, setCheckboxStatus] = React.useState(false);
+
   function moviesFilter(movies, query, checkboxStatus) {
     let moviesFilter = movies;
     let result;
@@ -40,12 +41,15 @@ function SavedMovies({ cardsList, handleMovieDelete }) {
     }
   }, [cardsList]);
 
+  console.log("filteredMovies", filteredMovies);
+
   return (
     <main className="page">
       <div className="wrapper">
         <SearchForm onSearchMovies={handleSearch} />
         <MoviesCardList
-          movies={cardsList}
+          filteredMovies={filteredMovies}
+          // cardsList={cardsList}
           handleMovieDelete={handleMovieDelete}
         />
       </div>

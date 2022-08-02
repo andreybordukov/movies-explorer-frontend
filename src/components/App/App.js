@@ -24,6 +24,7 @@ import {
   patchUser,
   addMovies,
   deleteMovies,
+  getMovies,
 } from "../../utils/MainApi";
 
 import { useCurrentWidth } from "../../hooks/useCurrentWidth";
@@ -99,6 +100,14 @@ function App() {
           console.log("Ошибка авторизации");
 
           // setMessage("Ошибка авторизации");
+        });
+
+      getMovies()
+        .then((cards) => {
+          setSavedMoviesUser(cards);
+        })
+        .catch((err) => {
+          console.log("Ошибка");
         });
     }
   }, [loggedIn]);
@@ -244,6 +253,7 @@ function App() {
   const handleEditProfileClick = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
   const closeMenu = () => {
     setIsMenuOpen(false);
   };
@@ -340,7 +350,10 @@ function App() {
               path="/saved-movies"
               element={
                 <ProtectedRoute loggedIn={loggedIn} currentUser={currentUser}>
-                  <SavedMovies cardsList={savedMoviesUser} />
+                  <SavedMovies
+                    cardsList={savedMoviesUser}
+                    handleMovieDelete={handleCardDelete}
+                  />
                 </ProtectedRoute>
               }
             />
