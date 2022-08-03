@@ -3,9 +3,9 @@ import "./Preloader.css";
 function Preloader() {
   return (
     <>
-      <label class="switch" for="checkbox">
+      <label className="switch" htmlFor="checkbox">
         <input type="checkbox" id="checkbox" />
-        <div class="slider round"></div>
+        <div className="slider round"></div>
       </label>
     </>
   );

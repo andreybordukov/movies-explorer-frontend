@@ -1,11 +1,11 @@
 import "./Switch.css";
 
-function Switch() {
+function Switch({ handleCheckboxChange }) {
   return (
     <>
-      <label class="switch" for="checkbox">
-        <input type="checkbox" id="checkbox" />
-        <div class="slider round"></div>
+      <label className="switch" htmlFor="checkbox">
+        <input type="checkbox" id="checkbox" onChange={handleCheckboxChange} />
+        <div className="slider round"></div>
       </label>
     </>
   );
