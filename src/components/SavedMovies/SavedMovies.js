@@ -1,18 +1,22 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import "./SavedMovies.css";
 
 import SearchForm from "../SearchForm/SearchForm";
-import MoviesCardList from "../MoviesCardList/MoviesCardList";
+import CardList from "../CardList/CardList";
 
 function SavedMovies({ cardsList, handleMovieDelete }) {
-  const [filteredMovies, setFilteredMovies] = React.useState(cardsList);
-  const [isSearchDone, setIsSearchDone] = React.useState(false);
+  const [filteredMovies, setFilteredMovies] = useState([]);
+  const [isSearchDone, setIsSearchDone] = useState(false);
 
-  const [query, setQuery] = React.useState("");
-  const [checkboxStatus, setCheckboxStatus] = React.useState(false);
+  const [query, setQuery] = useState("");
+  const [checkboxStatus, setCheckboxStatus] = useState(false);
 
-  function moviesFilter(movies, query, checkboxStatus) {
+  useEffect(() => {
+    setFilteredMovies(cardsList);
+  }, [cardsList]);
+
+  const moviesFilter = (movies, query, checkboxStatus) => {
     let moviesFilter = movies;
     let result;
 
@@ -24,33 +28,34 @@ function SavedMovies({ cardsList, handleMovieDelete }) {
       return movie.nameRU.toLowerCase().indexOf(query.toLowerCase()) !== -1;
     });
     return result;
-  }
+  };
 
-  function handleSearch(query, checkboxStatus) {
+  const handleSearch = (query, checkboxStatus) => {
     setQuery(query);
     setCheckboxStatus(checkboxStatus);
     const searchResult = moviesFilter(cardsList, query, checkboxStatus);
     setFilteredMovies(searchResult);
     setIsSearchDone(true);
-  }
+  };
 
-  React.useEffect(() => {
-    if (filteredMovies.length > 0) {
-      const searchResult = moviesFilter(cardsList, query, checkboxStatus);
-      setFilteredMovies(searchResult);
-    }
-  }, [cardsList]);
+  // useEffect(() => {
+  //   if (filteredMovies.length > 0) {
+  //     const searchResult = moviesFilter(cardsList, query, checkboxStatus);
+  //     setFilteredMovies(searchResult);
+  //   }
+  // }, [cardsList]);
 
-  console.log("filteredMovies", filteredMovies);
+  console.log("filteredMovies", filteredMovies, cardsList);
 
   return (
     <main className="page">
       <div className="wrapper">
         <SearchForm onSearchMovies={handleSearch} />
-        <MoviesCardList
+        <CardList
           filteredMovies={filteredMovies}
           // cardsList={cardsList}
           handleMovieDelete={handleMovieDelete}
+          isSavedMovies
         />
       </div>
     </main>

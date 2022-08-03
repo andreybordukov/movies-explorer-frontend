@@ -1,7 +1,13 @@
 import React, { useEffect, useState } from "react";
-import "./MoviesCard.css";
+import "./Card.css";
 
-function MoviesCard({ movie, cardsList, handleMovieSave, handleMovieDelete }) {
+const Card = ({
+  movie,
+  cardsList,
+  handleMovieSave,
+  handleMovieDelete,
+  isSavedMovies,
+}) => {
   const {
     country,
     id,
@@ -15,11 +21,14 @@ function MoviesCard({ movie, cardsList, handleMovieSave, handleMovieDelete }) {
     description,
   } = movie;
   const isSaved = movie.id && cardsList.some((m) => m.movieId === movie.id);
+  // console.log("::Card::", movie);
 
   const handleMoviesSaved = () => {
+    console.log("handleMoviesSaved", isSaved);
+
     if (isSaved) {
       handleMovieDelete(cardsList.filter((m) => m.movieId === movie.id)[0]);
-    } else if (!isSaved) {
+    } else {
       handleMovieSave({
         country,
         director,
@@ -49,7 +58,11 @@ function MoviesCard({ movie, cardsList, handleMovieSave, handleMovieDelete }) {
   return (
     <div className="card_wrapper">
       <div className="card_image" onClick={toTrailer}>
-        <img src={`https://api.nomoreparties.co${image.url}`} alt="logo" />
+        {isSavedMovies ? (
+          <img src={image} alt="logo" />
+        ) : (
+          <img src={`https://api.nomoreparties.co${image.url}`} alt="logo" />
+        )}
       </div>
       <div className="card_info">
         <div className="card_name">{nameRU}</div>
@@ -74,6 +87,6 @@ function MoviesCard({ movie, cardsList, handleMovieSave, handleMovieDelete }) {
       <div className="card_time">{getTimeFromMins(duration)} </div>
     </div>
   );
-}
+};
 
-export default MoviesCard;
+export default Card;

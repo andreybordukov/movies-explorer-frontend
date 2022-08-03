@@ -3,9 +3,8 @@ import React, { useEffect, useState } from "react";
 import "./Movies.css";
 
 import SearchForm from "../SearchForm/SearchForm";
-import MoviesCardList from "../MoviesCardList/MoviesCardList";
+import CardList from "../CardList/CardList";
 import ShowMore from "../ShowMore/ShowMore";
-import { getAllCards } from "../../utils/MoviesApi";
 
 function Movies({
   allMoviesFromApi,
@@ -85,13 +84,14 @@ function Movies({
     <main className="page">
       <div className="wrapper">
         <SearchForm onSearchMovies={handleSearch} />
-        <MoviesCardList
+        <CardList
           filteredMovies={filteredMovies}
           visibleMoviesCount={visibleMoviesCount}
           handleMovieSave={handleMovieSave}
           handleMovieDelete={handleMovieDelete}
           savedMoviesUser={savedMoviesUser}
           cardsList={cardsList}
+          isSavedMovies={false}
         />
         {filteredMovies.length &&
           visibleMoviesCount < filteredMovies.length && (
