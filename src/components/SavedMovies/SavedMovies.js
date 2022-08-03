@@ -36,6 +36,8 @@ function SavedMovies({ cardsList, handleMovieDelete }) {
     const searchResult = moviesFilter(cardsList, query, checkboxStatus);
     setFilteredMovies(searchResult);
     setIsSearchDone(true);
+
+    console.log(">>>>");
   };
 
   // useEffect(() => {
@@ -44,8 +46,6 @@ function SavedMovies({ cardsList, handleMovieDelete }) {
   //     setFilteredMovies(searchResult);
   //   }
   // }, [cardsList]);
-
-  console.log("filteredMovies", filteredMovies, cardsList);
 
   return (
     <main className="page">

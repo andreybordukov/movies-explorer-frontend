@@ -229,8 +229,6 @@ function App() {
   };
 
   const handleCardSave = (movie) => {
-    console.log("handleCardSave", movie);
-
     addMovies(movie)
       .then((newMovie) => {
         setSavedMoviesUser((movies) => [newMovie, ...movies]);
