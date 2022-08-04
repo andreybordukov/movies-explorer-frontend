@@ -1,5 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
+import {
+  Routes,
+  Route,
+  useLocation,
+  useNavigate,
+  Navigate,
+} from "react-router-dom";
 import "./App.css";
 
 import Header from "../Header/Header";
@@ -65,17 +71,19 @@ function App() {
   }, []);
 
   useEffect(() => {
-    const localMovies = localStorage.getItem("movies");
+    if (loggedIn) {
+      const localMovies = localStorage.getItem("movies");
 
-    if (localMovies) {
-      try {
-        setAllMoviesFromApi(JSON.parse(localMovies));
-      } catch (error) {
-        localMovies.removeItem("movies");
+      if (localMovies) {
+        try {
+          setAllMoviesFromApi(JSON.parse(localMovies));
+        } catch (error) {
+          localMovies.removeItem("movies");
+          fetchMovies();
+        }
+      } else {
         fetchMovies();
       }
-    } else {
-      fetchMovies();
     }
   }, []);
 
@@ -109,6 +117,8 @@ function App() {
         .catch((err) => {
           console.log("Ошибка");
         });
+
+      fetchMovies();
     }
   }, [loggedIn]);
 
@@ -197,6 +207,7 @@ function App() {
     localStorage.removeItem("query");
     localStorage.removeItem("checkboxStatus");
     localStorage.removeItem("searchResults");
+    localStorage.removeItem("movies");
 
     setLoginStatus({});
     setRegisterStatus({});
@@ -313,21 +324,29 @@ function App() {
             <Route
               path="/signup"
               element={
-                <Register
-                  reqStatus={isRegisterStatus}
-                  isSending={isRegisterSending}
-                  register={handleRegister}
-                />
+                loggedIn ? (
+                  <Navigate to="/" />
+                ) : (
+                  <Register
+                    reqStatus={isRegisterStatus}
+                    isSending={isRegisterSending}
+                    register={handleRegister}
+                  />
+                )
               }
             />
             <Route
               path="/signin"
               element={
-                <Login
-                  reqStatus={isLoginStatus}
-                  isSending={isLoginSending}
-                  login={handleLogin}
-                />
+                loggedIn ? (
+                  <Navigate to="/" />
+                ) : (
+                  <Login
+                    reqStatus={isLoginStatus}
+                    isSending={isLoginSending}
+                    login={handleLogin}
+                  />
+                )
               }
             />
             <Route

@@ -1,21 +1,29 @@
+import {
+  COUNT_CARD_1280,
+  COUNT_CARD_786,
+  COUNT_CARD_FOR_PAGE_1280,
+  COUNT_CARD_FOR_PAGE_360,
+  COUNT_CARD_FOR_PAGE_768,
+} from "./constants";
+
 export const getLoadStep = (width) => {
   if (width >= 1280) {
-    return 3;
+    return COUNT_CARD_1280;
   }
 
   if (width >= 768) {
-    return 2;
+    return COUNT_CARD_786;
   }
 };
 
 export const getInitialCount = (width) => {
   if (width >= 1280) {
-    return 12;
+    return COUNT_CARD_FOR_PAGE_1280;
   }
 
   if (width >= 768) {
-    return 8;
+    return COUNT_CARD_FOR_PAGE_768;
   }
 
-  return 5;
+  return COUNT_CARD_FOR_PAGE_360;
 };

@@ -3,7 +3,7 @@ import "./SearchForm.css";
 
 import Switch from "../../components/Swith/Switch";
 
-function SearchForm({ onSearchMovies }) {
+function SearchForm({ onSearchMovies, isMain }) {
   const [query, setQuery] = useState("");
   const [checkboxStatus, setCheckboxStatus] = useState(false);
 
@@ -15,6 +15,10 @@ function SearchForm({ onSearchMovies }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (isMain) {
+      localStorage.setItem("query", query);
+      localStorage.setItem("checkboxStatus", checkboxStatus);
+    }
     onSearchMovies(query, checkboxStatus);
   };
 
@@ -29,6 +33,13 @@ function SearchForm({ onSearchMovies }) {
       input.setCustomValidity("Нужно ввести ключевое слово");
     }
   }, [query]);
+
+  useEffect(() => {
+    if (isMain) {
+      setQuery(localStorage.getItem("query", query));
+      setCheckboxStatus(localStorage.getItem("checkboxStatus", checkboxStatus));
+    }
+  }, []);
 
   return (
     <section className="search_wrapper">
@@ -65,7 +76,11 @@ function SearchForm({ onSearchMovies }) {
           </button>
         </form>
         <div className="search_checkbox">
-          <Switch handleCheckboxChange={handleCheckboxChange} />
+          <Switch
+            handleCheckboxChange={handleCheckboxChange}
+            checkboxStatus={checkboxStatus}
+            isMain={isMain}
+          />
           <label>Короткометражки</label>
         </div>
       </div>

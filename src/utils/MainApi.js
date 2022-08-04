@@ -1,4 +1,4 @@
-export const AUTH_URL = "https://api.andrey.diplom.nomoredomains.work";
+import { AUTH_URL } from "./constants";
 
 export const register = async ({ password, email, name }) => {
   return await fetch(`${AUTH_URL}/signup`, {

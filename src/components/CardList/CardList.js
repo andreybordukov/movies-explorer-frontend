@@ -11,9 +11,15 @@ const CardList = ({
   cardsList,
   isSavedMovies,
 }) => {
+  console.log("?", filteredMovies);
   return (
     <section className="movies_wrapper">
       <div className="movies_component">
+        {!filteredMovies.length && (
+          <>
+            <div>Ничего не найдено</div>
+          </>
+        )}
         {filteredMovies &&
           filteredMovies.slice(0, visibleMoviesCount).map((item, i) => {
             return (

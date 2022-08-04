@@ -9,7 +9,7 @@ function Header({ loggedIn, location, onLogout, openMenu }) {
     style = "header_wrapper-none";
   }
 
-  if (location.pathname === "/") {
+  if (!loggedIn) {
     style = "header_wrapper-main";
   } else {
     style = "header_wrapper";
@@ -28,7 +28,7 @@ function Header({ loggedIn, location, onLogout, openMenu }) {
             </a>
           </div>
           <div className="button_block">
-            {location.pathname === "/" ? (
+            {!loggedIn ? (
               <>
                 <a className="auth__button-reg" href="/signup">
                   Регистрация

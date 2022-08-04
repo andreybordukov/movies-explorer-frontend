@@ -6,6 +6,8 @@ import SearchForm from "../SearchForm/SearchForm";
 import CardList from "../CardList/CardList";
 import ShowMore from "../ShowMore/ShowMore";
 
+import { SHORTFILM_TIME } from "../../utils/constants";
+
 function Movies({
   allMoviesFromApi,
   handleLoader,
@@ -38,12 +40,15 @@ function Movies({
     let result;
 
     if (checkboxStatus) {
-      filteredArray = filteredArray.filter((movie) => movie.duration <= 40);
+      filteredArray = filteredArray.filter(
+        (movie) => movie.duration <= SHORTFILM_TIME
+      );
     }
 
     result = filteredArray.filter((movie) => {
       return movie.nameRU.toLowerCase().indexOf(query.toLowerCase()) !== -1;
     });
+
     return result;
   };
 
@@ -83,7 +88,7 @@ function Movies({
   return (
     <main className="page">
       <div className="wrapper">
-        <SearchForm onSearchMovies={handleSearch} />
+        <SearchForm onSearchMovies={handleSearch} isMain={true} />
         <CardList
           filteredMovies={filteredMovies}
           visibleMoviesCount={visibleMoviesCount}

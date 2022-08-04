@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Card.css";
+import { API_HOST } from "../../utils/constants";
 
 const Card = ({
   movie,
@@ -32,9 +33,9 @@ const Card = ({
         duration,
         year,
         description,
-        image: `https://api.nomoreparties.co${movie.image.url}`,
+        image: `${API_HOST}${movie.image.url}`,
         trailerLink,
-        thumbnail: `https://api.nomoreparties.co${movie.image.formats.thumbnail.url}`,
+        thumbnail: `${API_HOST}${movie.image.formats.thumbnail.url}`,
         movieId: id,
         nameRU,
         nameEN,
@@ -62,7 +63,7 @@ const Card = ({
         {isSavedMovies ? (
           <img src={image} alt="logo" />
         ) : (
-          <img src={`https://api.nomoreparties.co${image.url}`} alt="logo" />
+          <img src={`${API_HOST}${image.url}`} alt="logo" />
         )}
       </div>
       <div className="card_info">
