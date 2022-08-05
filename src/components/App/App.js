@@ -132,11 +132,11 @@ function App() {
       // проверяем токен пользователя
       tokenValidate(token)
         .then((res) => {
+          console.log("res", res);
+
           if (res) {
             setLoggedIn(true);
             navigate(pathname);
-
-            setEmail(res.email);
           }
         })
         .catch((err) => console.log(err));
@@ -221,12 +221,14 @@ function App() {
 
     patchUser({ name, email })
       .then((dataUser) => {
+        console.log("dataUser ", dataUser);
         setCurrentUser(dataUser);
         setProfileStatus({
           message: "Профиль обновлён",
         });
       })
       .catch((err) => {
+        console.log("err", err);
         if (err === 409) {
           setProfileStatus({
             message: "Пользователь с таким email уже существует",

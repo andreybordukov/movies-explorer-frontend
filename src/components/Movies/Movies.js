@@ -59,6 +59,7 @@ function Movies({
 
     const searchResults = moviesFilter(allMoviesFromApi, query, checkboxStatus);
     setFilteredMovies(searchResults);
+    setSearchMovies(true);
   };
 
   // useEffect(() => {
@@ -97,6 +98,7 @@ function Movies({
           savedMoviesUser={savedMoviesUser}
           cardsList={cardsList}
           isSavedMovies={false}
+          isSearchMovies={isSearchMovies}
         />
         {filteredMovies.length &&
           visibleMoviesCount < filteredMovies.length && (

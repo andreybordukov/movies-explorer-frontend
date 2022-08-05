@@ -10,12 +10,12 @@ const CardList = ({
   savedMoviesUser,
   cardsList,
   isSavedMovies,
+  isSearchMovies,
 }) => {
-  console.log("?", filteredMovies);
   return (
     <section className="movies_wrapper">
       <div className="movies_component">
-        {!filteredMovies.length && (
+        {!filteredMovies.length && isSearchMovies && (
           <>
             <div>Ничего не найдено</div>
           </>
