@@ -1,11 +1,27 @@
+import React from "react";
+
 import "./Switch.css";
 
-function Switch() {
+function Switch({ handleCheckboxChange, isMain, checkboxStatus }) {
   return (
     <>
-      <label class="switch" for="checkbox">
-        <input type="checkbox" id="checkbox" />
-        <div class="slider round"></div>
+      <label className="switch" htmlFor="checkbox">
+        {isMain ? (
+          <input
+            type="checkbox"
+            id="checkbox"
+            onChange={handleCheckboxChange}
+            checked={Boolean(JSON.parse(checkboxStatus))}
+          />
+        ) : (
+          <input
+            type="checkbox"
+            id="checkbox"
+            onChange={handleCheckboxChange}
+          />
+        )}
+
+        <div className="slider round"></div>
       </label>
     </>
   );

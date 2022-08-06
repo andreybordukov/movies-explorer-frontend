@@ -4,6 +4,7 @@
   flex-direction: row;
   padding: 70px;
   color: #000000;
+  width: auto;
 }
 
 .search_component {
