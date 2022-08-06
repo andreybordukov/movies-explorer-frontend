@@ -15,11 +15,18 @@ function Profile({ logoutProfile, onProfileEdit, reqStatus: { message } }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onProfileEdit({
-      name: currentUser.name,
-      email: currentUser.email,
-      ...values,
-    });
+
+    if (
+      (values.email && values.email !== currentUser.email) ||
+      (values.name && values.name !== currentUser.name)
+    ) {
+      onProfileEdit({
+        name: currentUser.name,
+        email: currentUser.email,
+        ...values,
+      });
+    }
+
     setButtonDisabled(true);
   };
 

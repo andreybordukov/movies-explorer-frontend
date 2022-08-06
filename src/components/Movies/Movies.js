@@ -20,20 +20,19 @@ function Movies({
   const [query, setQuery] = useState("");
   const [checkboxStatus, setCheckboxStatus] = useState(false);
 
-  // const [initialMovies, setInitialMovies] = useState([]);
   const [moviesToRender, setMoviesToRender] = useState([]);
   const [filteredMovies, setFilteredMovies] = useState([]);
 
   const [isSearchMovies, setSearchMovies] = useState(false);
-  // const [searchStatus, setSearchStatus] = useState("");
-  // const [isSearchDone, setIsSearchDone] = useState(false);
 
-  // const [firstResultsNumber, setFirstResultsNumber] = useState(0);
-  // const [moreResultsNumber, setMoreResultsNumber] = useState(0);
-
-  // const currentViewport = document.documentElement.clientWidth;
-
-  // const [isMoreButtonVisible, setIsMoreButtonVisible] = useState(false);
+  useEffect(() => {
+    if (localStorage.getItem("query")) {
+      handleSearch(
+        localStorage.getItem("query"),
+        localStorage.getItem("checkboxStatus")
+      );
+    }
+  }, [allMoviesFromApi]);
 
   const moviesFilter = (movies, query, checkboxStatus) => {
     let filteredArray = movies;
@@ -58,6 +57,7 @@ function Movies({
     setCheckboxStatus(checkboxStatus);
 
     const searchResults = moviesFilter(allMoviesFromApi, query, checkboxStatus);
+
     setFilteredMovies(searchResults);
     setSearchMovies(true);
   };
@@ -79,12 +79,6 @@ function Movies({
   //     filteredMovies.slice(0, state.length + moreResultsNumber)
   //   );
   // }
-
-  // useEffect(() => {
-  //   if (moviesToRender.length === filteredMovies.length) {
-  //     setIsMoreButtonVisible(false);
-  //   }
-  // }, [moviesToRender, filteredMovies]);
 
   return (
     <main className="page">

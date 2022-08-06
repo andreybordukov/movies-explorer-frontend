@@ -17,6 +17,7 @@ function SearchForm({ onSearchMovies, isMain }) {
     e.preventDefault();
     if (isMain) {
       localStorage.setItem("query", query);
+
       localStorage.setItem("checkboxStatus", checkboxStatus);
     }
     onSearchMovies(query, checkboxStatus);
@@ -37,7 +38,11 @@ function SearchForm({ onSearchMovies, isMain }) {
   useEffect(() => {
     if (isMain) {
       setQuery(localStorage.getItem("query", query));
-      setCheckboxStatus(localStorage.getItem("checkboxStatus", checkboxStatus));
+      if (localStorage.getItem("checkboxStatus", checkboxStatus)) {
+        setCheckboxStatus(
+          localStorage.getItem("checkboxStatus", checkboxStatus)
+        );
+      }
     }
   }, []);
 

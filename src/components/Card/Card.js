@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./Card.css";
 import { API_HOST } from "../../utils/constants";
+import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
 const Card = ({
   movie,
@@ -21,7 +22,15 @@ const Card = ({
     director,
     description,
   } = movie;
-  const isSaved = movie.id && cardsList.some((m) => m.movieId === movie.id);
+  const {
+    currentUser: { _id },
+  } = React.useContext(CurrentUserContext);
+
+  const isSaved =
+    movie.id &&
+    cardsList
+      .filter((i) => i.owner === _id)
+      .some((m) => m.movieId === movie.id);
 
   const handleMoviesSaved = () => {
     if (isSaved) {
